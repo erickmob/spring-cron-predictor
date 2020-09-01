@@ -24,5 +24,5 @@ jdk:
 deploy:
   provider: heroku
   api-key:
-    secure: c5e84ff0-1718-457f-abee-589f4768085e
+    secure: 14df898a-3ef1-4302-9331-d3f1046a7c38
   app: spring-cron-predict
