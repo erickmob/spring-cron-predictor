@@ -4,15 +4,25 @@
 #  app: spring-cron-predict
 #  api_key:
 #    secure: "c5e84ff0-1718-457f-abee-589f4768085e"
-jobs:
-  include:
-    - stage: unit tests
-      script: "Running unit tests (1)"
-    - stage: deploy to heroku
-      script: skip
-      deploy: &heroku
-        provider: heroku
-        app: spring-cron-predict
-        api_key: c5e84ff0-1718-457f-abee-589f4768085e
-    - stage: test production deploy
-      script: 'curl https://spring-cron-predict.herokuapp.com'
+
+#jobs:
+#  include:
+#    - stage: unit tests
+#      script: "Running unit tests (1)"
+#    - stage: deploy to heroku
+#      script: skip
+#      deploy: &heroku
+#        provider: heroku
+#        app: spring-cron-predict
+#        api_key: c5e84ff0-1718-457f-abee-589f4768085e
+#    - stage: test production deploy
+#      script: 'curl https://spring-cron-predict.herokuapp.com'
+
+language: java
+jdk:
+  - oraclejdk11
+deploy:
+  provider: heroku
+  api-key:
+    secure: c5e84ff0-1718-457f-abee-589f4768085e
+  app: spring-cron-predict
